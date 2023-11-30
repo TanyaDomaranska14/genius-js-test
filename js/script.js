@@ -113,7 +113,7 @@
 // let newString = array.join(", ");
 //  console.log(newString);
 
-let arr = [1, 2, 3, 4, 5];
-let something = arr.reduce((s, f) => s * f);
-console.log(something);//15
-console.log();
+//якась дія з елементами масиву
+// let arr = [1, 2, 3, 4, 5];
+// let something = arr.reduce((s, f) => s * f);
+// console.log(something);//15
