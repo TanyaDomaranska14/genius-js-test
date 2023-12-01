@@ -44,16 +44,150 @@
 // };
 // showMovie(144);
 
-const addNumber = (number) => {
-    let sum = Number(number) + 10;
-    return console.log(sum);
-}
+// const addNumber = (number) => {
+//     let sum = Number(number) + 10;
+//     return console.log(sum);
+// }
 
-const numberRef = document.querySelector('input[name = "number"]');
+// const numberRef = document.querySelector('input[name = "number"]');
 
-const buttonRef = document.querySelector('button');
+// const buttonRef = document.querySelector('button');
 
-buttonRef.addEventListener('click', () => {
-    addNumber(numberRef.value);
-})
-console.log(numberRef.value);
+// buttonRef.addEventListener('click', () => {
+//     addNumber(numberRef.value);
+// })
+// console.log(numberRef.value);
+
+//! замикання функції
+// function createUrl(domain) {
+//   return function (url) {
+//     return `https://${url}.${domain}`;
+//   };
+// }
+// const comUrl = createUrl("com");
+
+// console.log(comUrl('google'));
+// console.log(comUrl('facebook'));
+
+
+//! this
+// function hello() {
+//     console.log("Hello",this);
+// }
+// hello();
+
+// const user = {
+//     name: "Roman",
+//     sity: 'Ukrainka',
+//     age: 16,
+//     sayHello: hello,
+// }
+
+// user.sayHello()
+
+// function abc() {
+//     console.log(this);
+// }
+// abc();
+
+// document.querySelector('p').onclick = abc;
+
+//!зміна кольору при кліку на div
+// function changeColor() {
+//     console.log(this);
+//     this.style.background = "green";
+//     this.style.color = "white";
+// }
+// document.querySelector('div').onclick = changeColor;
+
+//!зміна кольору при кліку, але обирає всі div через selectSelectorAll
+// function changeColor() {
+//     console.log(this);
+//     this.style.background = "green";
+//     this.style.color = "white";
+// }
+// let user = document.querySelectorAll('div');
+
+// user.forEach(function (element) {
+//     element.onclick = changeColor;
+// });
+
+//! в "стрілці" немає this, тобто потрібно використовувати this тільки у function
+// const showList = () => {
+//     console.log(this);
+// }
+// showList();
+
+// const list = {
+//     names: ["Ann", "Tanya", "Nata", "SErgiy"],
+//     showList: showList,
+// }
+// list.showList();
+
+//! як використовувати bind
+// function hello() {
+//     console.log(this);
+// }
+
+// const user = {
+//     name: "Tanya",
+//     age: 18,
+//     hello: hello,
+//     sayHelloWindow: hello.bind(window),
+//     info: function (city) {
+//         console.log(`Name is ${this.name}`);
+//         console.log(`Age is ${this.age}`);
+//         console.log(`City is ${city}`);
+//     }
+// }
+// // user.info();
+
+// const Ann = {
+//     name: "Ann",
+//     age: 25,
+// }
+// user.info.bind(Ann)('Kyiv');
+
+// const Nata = {
+//   name: "Nata",
+//   age: 35,
+// };
+// user.info.bind(Nata,'Ukrainka')();
+
+//! метод call
+// const userInfo = {
+//     name: "name",
+//     age: 33,
+//     logInfo: function (job) {
+//         console.group(`${name} info:`);
+//         console.log(`Name is: ${this.name}`);
+//         console.log(`Age is: ${this.age}`);
+//         console.log(`Job is: ${job}`);
+//         console.groupEnd();
+//     },
+// };
+// const Ivan = {
+//     name: "Ivan",
+//     age:45,
+// };
+
+// userInfo.logInfo.call(Ivan, 'developer');
+
+//!apply
+// const userInfo = {
+//     name: "name",
+//     age: 33,
+//     logInfo: function (job,city) {
+//         console.group(`${name} info:`);
+//         console.log(`Name is: ${this.name}`);
+//         console.log(`Age is: ${this.age}`);
+//         console.log(`Job is: ${job}`);
+//         console.log(`Sity is: ${city}`);
+//         console.groupEnd();
+//     },
+// };
+// const Ivan = {
+//     name: "Ivan",
+//     age:45,
+// };
+// userInfo.logInfo.apply(Ivan, ["developer", "Kyiv"]);
