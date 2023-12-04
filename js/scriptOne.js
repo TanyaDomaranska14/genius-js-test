@@ -69,7 +69,6 @@
 // console.log(comUrl('google'));
 // console.log(comUrl('facebook'));
 
-
 //! this
 // function hello() {
 //     console.log("Hello",this);
@@ -140,7 +139,7 @@
 //         console.log(`City is ${city}`);
 //     }
 // }
-// // user.info();
+// user.info();
 
 // const Ann = {
 //     name: "Ann",
@@ -191,3 +190,24 @@
 //     age:45,
 // };
 // userInfo.logInfo.apply(Ivan, ["developer", "Kyiv"]);
+
+
+// ! move mouse
+const ball = document.querySelector(".ball");
+
+ball.onmousedown = function (event) {
+  function move(pageX, pageY) {
+    ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+    ball.style.top = pageY - ball.offsetWidth / 2 + "px";
+  }
+  move(event.pageX, event.pageY);
+
+  function onMouseMove(event) {
+    move(event.pageX, event.pageY);
+  }
+
+  document.addEventListener("mousemove", onMouseMove);
+  ball.onmouseup = function () {
+    document.removeEventListener("mousemove", onMouseMove);
+  };
+};
